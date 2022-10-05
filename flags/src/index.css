@@ -1,2 +1,20 @@
-@import-normalize;
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+@import-normilize;
+
+/*@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');*/
+
+/** {*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+/*:root {*/
+/*    !*Typography*!*/
+/*    --family: 'Nunito Sans', sans-serif;*/
+/*    --fs-sm: 14px;*/
+/*    --fs-md: 16px;*/
+/*    --fw-light: 300;*/
+/*    --fw-normal: 600;*/
+/*    --fw-bold: 800;*/
+
+/*    !*Other*!*/
+/*    --radii: 0.5rem;*/
+/*}*/

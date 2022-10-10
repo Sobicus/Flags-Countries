@@ -1,13 +1,13 @@
 import {Header} from "./components/Heder";
 import {Main} from "./components/Main";
-import {Conrols} from "./components/Conrols";
+import {Controls} from "./components/Controls";
 
 function App() {
   return (
     <>
       <Header/>
         <Main>
-            <Conrols/>
+           <Controls/>
         </Main>
     </>
   );

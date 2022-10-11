@@ -25,7 +25,7 @@ const Input = styled.input.attrs({
   margin-left: -1rem;
   border: none;
   outline: none;
-  //background-color: var(--color-bg);
+  background-color: var(--colors-ui-base);
   color: var(--colors-text)
 `;
 

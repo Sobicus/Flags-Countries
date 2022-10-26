@@ -29,11 +29,11 @@ const Input = styled.input.attrs({
   color: var(--colors-text)
 `;
 
-export const Search = ({search, serSearch}) => {
+export const Search = ({search, setSearch}) => {
     return (
         <InputContainer>
             <IoSearch/>
-            <Input onChange={(e) => serSearch(e.target.value)} value={search}/>
+            <Input onChange={(e) => setSearch(e.target.value)} value={search}/>
         </InputContainer>
     )
 }

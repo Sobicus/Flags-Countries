@@ -1,7 +1,7 @@
 import {Search} from "./Search";
 import styled from "styled-components";
 
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {CustomSelect} from "./CustomSelext";
 
 const options = [
@@ -23,19 +23,26 @@ const Wrapper = styled.div`
     align-items: center;
   }`
 
-export const Controls = () => {
+export const Controls = ({onSearch}) => {
     const [search, setSearch] = useState('')
     const [region, setRegion] = useState('')
+
+    useEffect(() => {
+        const regionValue = region?.value || '';
+        onSearch(search, regionValue);
+        //eslint-disable-next-line
+    }, [search, region]);
+
     return (
-            <Wrapper>
-                <Search search={search} serSearch={setSearch}/>
-                <CustomSelect
-                    options={options}
-                    placeholder="Filter by Region"
-                    isClearable
-                    isSearchable={false}
-                    value={region}
-                    onChange={setRegion}/>
-            </Wrapper>
+        <Wrapper>
+            <Search search={search} setSearch={setSearch}/>
+            <CustomSelect
+                options={options}
+                placeholder="Filter by Region"
+                isClearable
+                isSearchable={false}
+                value={region}
+                onChange={setRegion}/>
+        </Wrapper>
     )
 }

@@ -26,7 +26,7 @@ export const HomePage = ({countries, setCountries}) => {
     };
 
     useEffect(() => {
-        if (!countries.length)
+        if (!filtredCountries.length)
             axios.get(ALL_COUNTRIES).then(({data}) => setCountries(data));
     }, []);
 
@@ -35,7 +35,7 @@ export const HomePage = ({countries, setCountries}) => {
             <Controls onSearch={handleSearch}/>
             <List>
                 {
-                    countries.map((c) => {
+                    filtredCountries.map((c) => {
                         const countryInfo = {
                             img: c.flags.png,
                             name: c.name,
@@ -65,4 +65,3 @@ export const HomePage = ({countries, setCountries}) => {
         </>
     )
 };
-

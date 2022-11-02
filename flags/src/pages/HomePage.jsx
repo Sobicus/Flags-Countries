@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from "axios";
 import {useEffect, useState} from "react";
-import {useHistory, useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import {ALL_COUNTRIES} from "../config";
 import {List} from "../components/List";
 import {Card} from "../components/Cards";
@@ -26,7 +26,7 @@ export const HomePage = ({countries, setCountries}) => {
     };
 
     useEffect(() => {
-        if (!filtredCountries.length)
+        if (!countries.length)
             axios.get(ALL_COUNTRIES).then(({data}) => setCountries(data));
     }, []);
 
@@ -55,7 +55,9 @@ export const HomePage = ({countries, setCountries}) => {
                             ],
                         }
                         return (
-                            <Card key={c.name} onClick={() => {
+                            <Card
+                                key={c.name}
+                                onClick={() => {
                                 navigate(`/country/${c.name}`)
                             }}{...countryInfo}/>
                         )

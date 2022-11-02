@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {Route, Routes} from 'react-router-dom'
+import {Route, Routes, useParams} from 'react-router-dom'
 import {Header} from "./components/Heder";
 import {Main} from "./components/Main";
 import {HomePage} from "./pages/HomePage";
@@ -14,9 +14,9 @@ function App() {
             <Header/>
             <Main>
                 <Routes>
-                    <Route path="/" element={<HomePage countries={countries} setCountries={setCountries}/>}></Route>
-                    <Route path="/country/:name" element={<Details/>}></Route>
-                    <Route path="*" element={<NotFound/>}></Route>
+                    <Route path="/" element={<HomePage countries={countries} setCountries={setCountries}/>}/>
+                    <Route path="/country/:name" element={<Details/>}/>
+                    <Route path="*" element={<NotFound/>}/>
                 </Routes>
             </Main>
         </>

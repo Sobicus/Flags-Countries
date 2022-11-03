@@ -18,6 +18,7 @@ export const HomePage = ({countries, setCountries}) => {
         if (region) {
             data = data.filter(c => c.region.includes(region))
         }
+
         if (search) {
             data = data.filter(c => c.name.toLowerCase().includes(search.toLowerCase()))
         }
@@ -26,7 +27,7 @@ export const HomePage = ({countries, setCountries}) => {
     };
 
     useEffect(() => {
-        if (!countries.length)
+        // if (!countries.length)
             axios.get(ALL_COUNTRIES).then(({data}) => setCountries(data));
     }, []);
 
@@ -58,8 +59,8 @@ export const HomePage = ({countries, setCountries}) => {
                             <Card
                                 key={c.name}
                                 onClick={() => {
-                                navigate(`/country/${c.name}`)
-                            }}{...countryInfo}/>
+                                    navigate(`/country/${c.name}`)
+                                }}{...countryInfo}/>
                         )
                     })
                 }
